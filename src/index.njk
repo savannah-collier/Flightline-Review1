@@ -1,30 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flightline Review — Aviation Stories, Told Straight</title>
-<meta name="description" content="Accurate, credible, unbiased aviation and aerospace journalism — the people, the investigations, and the photography that shape the skies.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="masthead">
-  <div class="wrap">
-    <a href="/" class="masthead-mark"><img src="/images/logo.jpeg" alt="Flightline Review" class="masthead-logo"></a>
-    <nav class="masthead-nav">
-      <a href="/" class="active">Home</a>
-      <a href="/stories.html">Stories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-    <a href="/contact.html" class="masthead-cta">GET IN TOUCH</a>
-  </div>
-</header>
-
+---
+layout: base.njk
+title: Home
+description: Delivering accurate, credible, and unbiased aviation and aerospace content.
+permalink: index.html
+---
 <section class="hero" style="padding:0;">
   <div class="hero-inner">
-    <div class="hero-eyebrow">ISSUE 04 — ON THE FLIGHTLINE NOW</div>
+    <div class="hero-eyebrow">ON THE FLIGHTLINE NOW</div>
     <h1>Aviation, told by the people who live it.</h1>
     <p>Delivering accurate, credible, and unbiased aviation and aerospace content — from critical safety findings to the individuals who keep aircraft moving and communities connected.</p>
     <div class="hero-actions">
@@ -51,30 +33,20 @@
   </div>
 
   <div class="story-list">
-    <a href="/articles/2026-02-14-inside-the-ramp/" class="story-row">
-      <span class="story-date">02.14.2026</span>
-      <div>
-        <div class="story-title">Inside the ramp: what ground crews see that pilots don't</div>
-        <div class="story-dek">A season on the tarmac with the crews who turn aircraft around in under an hour.</div>
-      </div>
-      <span class="story-tag">FEATURE</span>
-    </a>
-    <a href="/articles/2026-02-02-reading-a-preliminary-report/" class="story-row">
-      <span class="story-date">02.02.2026</span>
-      <div>
-        <div class="story-title">Reading a preliminary report without the panic</div>
-        <div class="story-dek">A field guide to understanding NTSB findings before the headlines get there first.</div>
-      </div>
-      <span class="story-tag">SAFETY</span>
-    </a>
-    <a href="/articles/2026-01-19-the-last-analog-panel/" class="story-row">
-      <span class="story-date">01.19.2026</span>
-      <div>
-        <div class="story-title">The last analog panel: flying a DC-3 in 2026</div>
-        <div class="story-dek">No glass, no autopilot, no shortcuts — a profile of the pilots keeping old iron airworthy.</div>
-      </div>
-      <span class="story-tag">PROFILE</span>
-    </a>
+    {% for article in collections.articles | reverse %}
+      {% if loop.index0 < 3 %}
+      <a href="{{ article.url }}" class="story-row">
+        <span class="story-date">{{ article.data.date | readableDate }}</span>
+        <div>
+          <div class="story-title">{{ article.data.title }}</div>
+          <div class="story-dek">{{ article.data.dek }}</div>
+        </div>
+        <span class="story-tag">{{ article.data.tag }}</span>
+      </a>
+      {% endif %}
+    {% else %}
+      <p style="color:var(--slate); padding:24px 0;">No stories published yet — check back soon.</p>
+    {% endfor %}
   </div>
 </section>
 
@@ -130,36 +102,3 @@
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-mark">FLIGHTLINE<span>·</span>REVIEW</div>
-        <div class="footer-tagline">Accurate, credible, unbiased aviation and aerospace journalism.</div>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>SITE</h4>
-          <a href="/">Home</a>
-          <a href="/stories.html">Stories</a>
-          <a href="/about.html">About</a>
-          <a href="/contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>FOLLOW</h4>
-          <a href="https://www.instagram.com/flightlinereview/">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61588475706495">Facebook</a>
-          <a href="mailto:Contact@flightlinereview.com">Email</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 FLIGHTLINE REVIEW. ALL RIGHTS RESERVED.</span>
-      <span>BASED ON THE FLIGHTLINE</span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>

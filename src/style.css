@@ -528,6 +528,17 @@ footer{
   margin-bottom:22px;
   text-align:justify;
 }
+.print-body blockquote{
+  margin:28px 0;
+  padding:4px 0 4px 22px;
+  border-left:3px solid var(--rust);
+  font-style:italic;
+  color:var(--slate);
+}
+.print-body blockquote p{
+  text-align:left;
+  margin-bottom:0;
+}
 .print-footer-bar{
   height:4px;
   background:var(--ink);

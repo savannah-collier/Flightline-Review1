@@ -20,5 +20,5 @@ collections:
       - label: "Tag"
         name: "tag"
         widget: "select"
-        options: ["FEATURE", "SAFETY", "PROFILE", "MAINTENANCE", "EXPLAINER"]
+        options: ["FEATURE", "SAFETY", "PROFILE", "MAINTENANCE", "EXPLAINER", "MILITARY", "BUSINESS", "BREAKING"]
       - { label: "Article Body", name: "body", widget: "markdown" }
