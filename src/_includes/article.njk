@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+<div class="print-article">
+
+  <div class="print-masthead">
+    <div>
+      <div class="print-masthead-brand">FLIGHTLINE REVIEW</div>
+      <div class="print-masthead-tagline">Aviation Analysis and Reporting</div>
+    </div>
+    <div class="print-masthead-meta">
+      <div>{{ date | readableDate }}</div>
+      <div class="print-byline">By: {{ author }}</div>
+    </div>
+  </div>
+
+  <span class="print-tag">{{ tag }}</span>
+  <h1 class="print-headline">{{ title }}</h1>
+
+  <div class="print-body">
+    {{ content | safe }}
+  </div>
+
+  <div class="print-footer-bar"></div>
+  <div class="print-copyright">© 2026 FLIGHTLINE REVIEW. ALL RIGHTS RESERVED.</div>
+  <a href="/stories.html" class="print-back">← Back to Stories</a>
+
+</div>

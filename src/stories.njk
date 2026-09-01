@@ -1,0 +1,36 @@
+---
+layout: base.njk
+title: Stories
+description: Reporting from the flightline — safety findings, profiles, and the people behind the operation.
+permalink: /stories.html
+---
+<section class="page-hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">ALL STORIES</div>
+    <h1>Reporting from the flightline.</h1>
+    <p>Safety findings, profiles, and the people behind the operation — updated as the reporting lands.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="strip">
+    <span class="strip-label">ARCHIVE</span>
+    <span class="strip-fill"></span>
+    <span>{{ collections.articles.length }} STORIES</span>
+  </div>
+</div>
+
+<section class="wrap">
+  <div class="story-list">
+    {% for article in collections.articles | reverse %}
+    <a href="{{ article.url }}" class="story-row">
+      <span class="story-date">{{ article.data.date | readableDate }}</span>
+      <div>
+        <div class="story-title">{{ article.data.title }}</div>
+        <div class="story-dek">{{ article.data.dek }}</div>
+      </div>
+      <span class="story-tag">{{ article.data.tag }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>

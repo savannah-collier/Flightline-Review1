@@ -1,0 +1,6 @@
+{
+  "layout": "article.njk",
+  "tags": "articles",
+  "author": "Savannah Collier",
+  "permalink": "articles/{{ slug }}/index.html"
+}
